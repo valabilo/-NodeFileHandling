@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: beige;
+            font-size: 1.5rem;
+            text-align: left;
+        }
+        form {
+            background-color: white;
+            padding: 2rem 5rem;
+            justify-content: center;
+            align-items: center;
+            width: 35%;
+            margin: auto;
+            margin-top: 3rem;
+            border-radius: 10px;
+            box-shadow: 20px 20px 50px grey;
+        }
+        h1 {
+            margin-block: 1rem;
+            color: brown;
+        }
+        button {
+            background-color: rgb(140, 109, 51);
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: .5rem 1rem; 
+            border-radius: 5px; 
+            border: 0;
+        }
+        button:hover {
+            background-color: rgb(163, 139, 94);
+            color: black;
+            font-weight: bold;
+        }
+        input, textarea {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding-inline: 10px;
+            padding-block: 5px;
+            margin-bottom: 5px;
+            width: 20em;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            outline: none;
+            overflow: visible;
+        }
+        input:focus, textarea:focus{
+            border: 3.5px solid #b9d8ed;
+        }
+        input::placeholder, textarea::placeholder{
+            font-style: italic;
+            color: lightgrey;
+        }
+        label {
+            display: inline-block;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <%= locals.errorMessage || '' %> 
+    
+    <form action="/form-registration" method="post">
+        <h1>Registration Form</h1>
+        <label for="fname">First Name</label>   <!--first name-->
+         <br>
+        <input type="text" id="fname" name="firstname" placeholder="James" required>
+        <br>
+        <label for="lname">Last Name</label> <!--last name-->
+        <br>
+        <input type="lastname" id="lname" name="lastname" placeholder="Bond" required>
+        <br>
+        <label for="address">Address</label> <!--address-->
+        <br>
+        <textarea id="address" name="address" placeholder="Your Address..."required ></textarea>
+        <br>
+        <label for="age">Age</label> <!--age-->
+        <br>
+        <input type="age" id="age" name="age" placeholder="Age..."required>
+        <br>
+        <label for="emailaddress">Email Address</label> <!--email-->
+        <br>
+        <input type="email" id="emailaddress" name="emailaddress" placeholder="sample@email.com" required>
+        <br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</body>
+</html>
